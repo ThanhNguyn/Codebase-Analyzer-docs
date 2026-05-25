@@ -99,6 +99,22 @@
   <div class="section-tag">Overview</div>
   <h1 class="font-mono text-[clamp(1.6rem,4vw,2.4rem)] font-bold leading-tight mb-4 text-txt">Codebase Analyzer</h1>
   <p class="text-[1.05rem] text-txt-dim max-w-[640px] leading-relaxed">Công cụ phân tích mã nguồn cục bộ — kiến trúc OOP với C++23 core engine và giao diện desktop Electron + React. Bài tập lớn môn Lập Trình Hướng Đối Tượng.</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
+    <div class="card border-l-3 border-l-accent">
+      <div class="font-mono text-[0.88rem] font-semibold mb-2 text-accent flex items-center gap-2">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2m-9-11h2m18 0h2m-4.2-5.8l-1.4 1.4M6.6 17.4l-1.4 1.4m0-12.8l1.4 1.4m10.8 10.8l1.4 1.4"/></svg>
+        Mục tiêu dự án
+      </div>
+      <p class="text-[0.9rem] text-txt-dim leading-relaxed">Xây dựng Codebase Analyzer dưới hai chế độ: <strong class="text-txt">Desktop UI App</strong> và <strong class="text-txt">CLI Mode</strong>. Cho phép người dùng chọn thư mục mã nguồn, quét đệ quy toàn bộ cây thư mục, tự động bỏ qua các folder nhiễu, nhận diện file source và thống kê các chỉ số cốt lõi gồm tổng số file, dòng code, dòng comment và dòng trống.</p>
+    </div>
+    <div class="card border-l-3 border-l-neon-blue">
+      <div class="font-mono text-[0.88rem] font-semibold mb-2 text-neon-blue flex items-center gap-2">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Đối tượng người dùng
+      </div>
+      <p class="text-[0.9rem] text-txt-dim leading-relaxed">Sinh viên ngành CNTT, kỹ sư phần mềm, quản lý dự án — bất kỳ ai cần đánh giá, kiểm tra cấu trúc và quy mô của một kho lưu trữ mã nguồn cục bộ (Local Codebase).</p>
+    </div>
+  </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
     <div class="card">
       <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4 bg-accent/12 text-accent">
@@ -180,6 +196,42 @@
         <img src="images/usecase-diagram.png" alt="Use Case Diagram — Codebase Analyzer" class="max-w-full h-auto rounded" loading="lazy">
       </div>
     </div>
+  </div>
+</div>
+</section>
+
+<!-- USE CASES TABLE -->
+<section class="py-16 px-4 sm:px-6" id="usecases-detail">
+<div class="max-w-[1080px] mx-auto fade-up">
+  <div class="section-tag">Feature Matrix</div>
+  <h2 class="font-mono text-[clamp(1.6rem,4vw,2.4rem)] font-bold leading-tight mb-4 text-txt">Use Cases Detail</h2>
+  <p class="text-[1.05rem] text-txt-dim max-w-[640px] leading-relaxed">Mô tả chi tiết từng chức năng chính của hệ thống.</p>
+  <div class="table-wrap mt-6">
+    <table>
+      <thead><tr><th>Mã</th><th>Tên Use Case</th><th>Mô tả chức năng</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="font-mono text-[0.82rem] text-accent">UC-01</td>
+          <td class="font-semibold">Chọn thư mục & Bộ lọc</td>
+          <td class="text-txt-dim text-[0.88rem]">Người dùng chọn thư mục source code bằng Desktop UI hoặc truyền đường dẫn qua CLI. Hệ thống chỉ bắt đầu phân tích khi có đường dẫn hợp lệ và tự động kích hoạt bộ lọc file/folder nhiễu.</td>
+        </tr>
+        <tr>
+          <td class="font-mono text-[0.82rem] text-accent">UC-02</td>
+          <td class="font-semibold">Quét đệ quy cây thư mục</td>
+          <td class="text-txt-dim text-[0.88rem]">Hệ thống tự động càn quét toàn bộ cấu trúc cây thư mục con, thu thập các tệp tin hợp lệ và khởi tạo các đối tượng phân tích đa hình tương ứng dựa vào phần mở rộng.</td>
+        </tr>
+        <tr>
+          <td class="font-mono text-[0.82rem] text-accent">UC-03</td>
+          <td class="font-semibold">Phân tích nội dung mã nguồn</td>
+          <td class="text-txt-dim text-[0.88rem]">Đọc từng dòng tệp tin, áp dụng thuật toán loại bỏ khoảng trắng thừa để bóc tách chính xác các dòng trống, dòng comment dòng đơn hoặc khối mã multi-line của từng ngôn ngữ cụ thể.</td>
+        </tr>
+        <tr>
+          <td class="font-mono text-[0.82rem] text-accent">UC-04</td>
+          <td class="font-semibold">Tổng hợp và xuất báo cáo</td>
+          <td class="text-txt-dim text-[0.88rem]">Module báo cáo tổng hợp toàn bộ số liệu, hiển thị kết quả trong Desktop UI hoặc Console, đồng thời ghi dữ liệu phân tích vào tệp Markdown <code class="text-accent">codebase_report.md</code>.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 </section>
@@ -477,6 +529,23 @@ reportGen.<span class="text-neon-blue">generateMarkdownReport</span>(<span class
       <div class="text-[0.9rem] text-txt-dim leading-relaxed">CI/CD pipeline, tự động build release cho multi-platform.</div>
     </div>
   </div>
+
+  <h3 class="font-mono text-[1.1rem] font-semibold mt-12 mb-2 text-txt">Core Libraries</h3>
+  <p class="text-[0.92rem] text-txt-muted mb-6">Các thư viện chuẩn C++ được sử dụng trong CLI core engine.</p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="card">
+      <div class="font-mono text-[0.88rem] font-semibold mb-2 text-accent">&lt;filesystem&gt;</div>
+      <div class="text-[0.85rem] text-txt-dim leading-relaxed">Sử dụng <code class="text-accent">recursive_directory_iterator</code> để quét cây thư mục an toàn, đa nền tảng và nhận diện phần mở rộng tệp tin nhanh chóng.</div>
+    </div>
+    <div class="card">
+      <div class="font-mono text-[0.88rem] font-semibold mb-2 text-neon-cyan">&lt;memory&gt;</div>
+      <div class="text-[0.85rem] text-txt-dim leading-relaxed">Áp dụng <code class="text-neon-cyan">std::unique_ptr</code> để quản lý vòng đời mảng đa hình, tự động giải phóng bộ nhớ và ngăn ngừa hoàn toàn Memory Leak.</div>
+    </div>
+    <div class="card">
+      <div class="font-mono text-[0.88rem] font-semibold mb-2 text-neon-amber">&lt;string&gt; &amp; &lt;algorithm&gt;</div>
+      <div class="text-[0.85rem] text-txt-dim leading-relaxed">Xử lý chuỗi tối ưu bằng STL thay vì Regex — tăng tốc I/O gấp nhiều lần khi phân tích các dự án lớn.</div>
+    </div>
+  </div>
 </div>
 </section>
 
@@ -554,6 +623,7 @@ cmake --build build
     <div class="flex justify-center gap-5 mt-3">
       <a href="https://github.com/ThanhNguyn/Codebase-Analyzer" target="_blank" class="font-mono text-[0.78rem] text-txt-dim hover:text-accent transition-colors duration-200 cursor-pointer">GitHub</a>
       <a href="https://github.com/ThanhNguyn/Codebase-Analyzer/releases" target="_blank" class="font-mono text-[0.78rem] text-txt-dim hover:text-accent transition-colors duration-200 cursor-pointer">Releases</a>
+      <a href="https://thanhnguyn.github.io/Codebase-Analyzer-docs/" class="font-mono text-[0.78rem] text-txt-dim hover:text-accent transition-colors duration-200 cursor-pointer">Docs</a>
     </div>
   </div>
 </footer>

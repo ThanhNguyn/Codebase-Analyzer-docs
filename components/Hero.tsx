@@ -89,20 +89,20 @@ export default function Hero() {
                 <div className="w-12" />
               </div>
 
-              {/* Terminal content - Default state without pre-filled stats */}
+              {/* Terminal content - Default state in English for high-end professionalism */}
               <div className="p-6 sm:p-8 font-mono text-[0.85rem] leading-8 text-txt-dim">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-accent">$</span>
                   <span className="text-neon-cyan font-medium">./codebase-analyzer</span>
-                  <span className="text-txt-muted">--path=[chưa chọn]</span>
+                  <span className="text-txt-muted">--path=[pending]</span>
                 </div>
                 
-                <div className="text-txt-muted italic mb-4"># Chờ đường dẫn thư mục để phân tích...</div>
+                <div className="text-txt-muted italic mb-4"># Waiting for target directory path...</div>
 
                 <div className="space-y-1.5 border-l-2 border-border-default pl-3 py-1 text-txt-muted">
-                  <div>Cây thư mục quét: <span className="text-txt-muted">0 files</span></div>
-                  <div>Trạng thái bộ lọc: <span className="text-txt-muted">Idle</span></div>
-                  <div>Phát hiện ngôn ngữ: <span className="text-txt-muted">None</span></div>
+                  <div>Scanned directory tree: <span className="text-txt-muted">0 files</span></div>
+                  <div>Filter status: <span className="text-txt-muted">Idle</span></div>
+                  <div>Detected languages: <span className="text-txt-muted">None</span></div>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-border-default/50 space-y-1 text-[0.82rem] text-txt-muted">
@@ -122,7 +122,7 @@ export default function Hero() {
 
                 <div className="mt-4 text-txt-muted flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-txt-muted animate-pulse" />
-                  Sẵn sàng phân tích codebase...
+                  Ready to analyze codebase...
                 </div>
 
                 <div className="mt-3 flex items-center gap-1">

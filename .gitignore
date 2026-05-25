@@ -1,6 +1,9 @@
-node_modules
-dist
-_backup
-.DS_Store
-*.local
+node_modules/
+.next/
+out/
+dist/
+_backup/
 .agent/
+.vite/
+*.tsbuildinfo
+next-env.d.ts
